@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  test:
+    container_name: test-container
+    build: .
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/book_store
+    command: npm run test
+  app:
+    container_name: book-project
+    restart: always
+    build: .
+    ports:
+      - '80:3000'
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    links:
+      - mongodb
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/book_store
+    command: npm start
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-container
+    ports:
+      - "27017:27017"

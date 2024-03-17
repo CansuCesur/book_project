@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "320f753e-f34a-44f7-b9a6-bb7efc63687c",
+		"name": "BookProjectCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7223877"
+	},
+	"item": [
+		{
+			"name": "createBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Lessons in Chemistry\",\r\n  \"authorInfo\": {\r\n    \"name\": \"Bonnie Garmus\",\r\n    \"country\": \"United States\",\r\n    \"birthDate\": \"1819-08-01\"\r\n  },\r\n  \"price\": 25.99,\r\n  \"ISBN\": \"9780142437247\",\r\n  \"language\": \"English\",\r\n  \"pageCount\": 368,\r\n  \"publisher\": \"Doubleday\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/books/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"books",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/books/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"books",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:80/api/books/deleteById?/'65f442fcb89aa831b5edfbd7'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"books",
+						"deleteById"
+					],
+					"query": [
+						{
+							"key": "/'65f442fcb89aa831b5edfbd7'",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Lord of the Rings\",\r\n  \"authorInfo\": {\r\n    \"name\": \"J.R.R. Tolkien\",\r\n    \"country\": \"United Kingdom\",\r\n    \"birthDate\": \"1892-01-03\"\r\n  },\r\n  \"price\": 24.99,\r\n  \"ISBN\": \"9780261103252\",\r\n  \"language\": \"Turkish\",\r\n  \"pageCount\": 1178,\r\n  \"publisher\": \"Allen & Unwin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:80/api/books/updateById/65f49c400d974c535d30a8ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"books",
+						"updateById",
+						"65f49c400d974c535d30a8ab"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
