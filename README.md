@@ -13,10 +13,10 @@ It is an example of basic usage of nodejs, docker and mongo technologies togethe
    
 ## How to Run Project
 Please use the given instructions :
-1. Clone the project using  git clone  command.
+1. Clone the project using  **git clone**  command.
 2. Open your terminal.
-3. Go to project folder using  cd  command.
-4. Run the project using  docker compose up  command.
+3. Go to project folder using  **cd**  command.
+4. Run the project using  **docker compose up**  command. (If you have a problem with node module installations, use command in troubleshooting then try again docker compose up command.)
 5. The test container runs first, then the app container runs. To try API tests, **wait** for the test container to finish running.
 
 ## API Tests
