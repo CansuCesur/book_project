@@ -1,18 +1,10 @@
 # Book Project
-Book Project
+This is a simple book project backend.
+It is an example of basic use of nodejs, docker and mongo technologies together.
 
 ## Dependencies
-1. You have to get openssl libraries.
-    - Get openssl libraries using given link.
-    - https://www.openssl.org/source/
-    - Download openssl
-    - Unzip openssl folder
-    - Enter the folder using terminal
-    - ./config shared --prefix=/usr/local/
-    - make
-    - make install
-    - NOTE: Change the location /usr/local/ and you must have root permissions (sudo)
-2. Do not run the client project before run server project
+1. You have to get Docker ( The entire project is suitable for running on Docker )
+   
 ## How to Run Project
 Please use the given insructions :
 1. Clone the project using  git clone  command.
@@ -26,16 +18,9 @@ If you want to test with postman, you can import [api collection file for postma
 
 1. Create a book
 
-git status
-
 2. Get all books
-
-git status
 
 3. Delete a book
 
-git status
-
 4. Update a book
 
-git status
