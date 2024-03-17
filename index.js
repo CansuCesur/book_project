@@ -17,11 +17,14 @@ server = app.listen(PORT, () => {
 app.use('/api/books', bookRouter)
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI)
+ mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("Connected to database");
     })
     .catch(err => {
         console.log("Not connected to database");
     });
-module.exports = app;
+
+
+
+ module.exports = { app, server, mongoose };
