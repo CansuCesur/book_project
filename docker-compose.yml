@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   test:
@@ -21,11 +21,50 @@ services:
       - .:/usr/src/app
     links:
       - mongodb
+      - redis
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/book_store
+      - FIREBASE_API_KEY=AIzaSyCShOauPVqQfpCGkw-M7t1n8ytJdkz5d3U
+      - FIREBASE_AUTH_DOMAIN=book-project-3e558.firebaseapp.com
+      - FIREBASE_PROJECT_ID=book-project-3e558
+      - FIREBASE_STORAGE_BUCKET=book-project-3e558.appspot.com
+      - FIREBASE_MESSAGING_SENDER_ID=506193425940
+      - FIREBASE_APP_ID=1:506193425940:web:298d2ee6baf76a098b9901
+      - FIREBASE_LOG_SERVICE_URL=http://host.docker.internal:5001/book-project-3e558/us-central1/logRequest
+    depends_on:
+      - mongodb
+      - redis
     command: npm start
   mongodb:
     image: mongo:latest
     container_name: mongodb-container
     ports:
       - "27017:27017"
+  redis:
+    container_name: redis-container
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+  seed:
+    build: .
+    command: node seed.js
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/book_store
+    depends_on:
+      - mongodb
+  firebase:
+    container_name: firebase-emulator
+    build: .
+    ports:
+      - "4000:4000"
+      - "5001:5001"
+      - "4500:4500"
+    tty: true
+    stdin_open: true
+    environment:
+      - FIREBASE_PROJECT_ID=book-project-3e558
+      - FIREBASE_FUNCTIONS_EMULATOR=http://0.0.0.0:5001
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: sh -c "firebase emulators:start --only functions"

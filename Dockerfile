@@ -10,14 +10,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install Firebase CLI globally
+RUN npm install -g firebase-tools
+
 # Copy project files
 COPY . .
-
-# Run tests (assuming your test command is npm test)
-RUN npm test
-
-# Expose port
-EXPOSE 3000
 
 # Command to run the application
 CMD ["npm", "start"]

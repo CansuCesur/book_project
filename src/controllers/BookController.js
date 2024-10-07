@@ -43,7 +43,6 @@ const updateById = async (req, res) => {
     }
 };
 
-
 module.exports = {
     create,
     getAll,
