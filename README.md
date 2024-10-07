@@ -6,11 +6,11 @@ It is an example of basic usage of nodejs, docker and mongo technologies togethe
 
 - FIREBASE FUNCTIONS (http call logs for emulator) (http://127.0.0.1:4000/logs)
 - REDIS CACHE
-- LOGGING (general project logging with Winston)
+- LOGGING (general project logging with WINSTON)
 - SWAGGER (http://localhost/api-docs/)
 - SEEDING (autoload dummy data)
 - JOI (validations updated)
-- VERSIONING
+- VERSIONING (v1.0, v2.0)
 - CODE IMPROVEMENTS
 
 ## Dependencies
