@@ -2,6 +2,17 @@
 This is a simple book project's backend.
 It is an example of basic usage of nodejs, docker and mongo technologies together.
 
+# 🚀 VERSION 2.0 NEW FEATURES 🚀
+
+- FIREBASE FUNCTIONS (http call logs for emulator) (http://127.0.0.1:4000/logs)
+- REDIS CACHE
+- LOGGING (general project logging with Winston)
+- SWAGGER (http://localhost/api-docs/)
+- SEEDING (autoload dummy data)
+- JOI (validations updated)
+- VERSIONING
+- CODE IMPROVEMENTS
+
 ## Dependencies
 1. You have to get **Docker** ( The entire project is suitable for running on Docker )
  - The own dependencies of this project in the docker container :
@@ -10,7 +21,14 @@ It is an example of basic usage of nodejs, docker and mongo technologies togethe
 3. Express
 4. Supertest
 5. Body-parser
-   
+6. Redis
+7. Joi
+8. Swagger
+9. Firebase
+10. Winston
+11. Axios
+12. Cors
+
 ## How to Run Project
 Please use the given instructions :
 1. Clone the project using  **git clone**  command.
